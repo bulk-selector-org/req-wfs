@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: test1
+name: Ajay Req Wf
 
 # Controls when the workflow will run
 on:
