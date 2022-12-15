@@ -1,0 +1,35 @@
+name: Addash Req Wf
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  job-always-pass:
+    name: Succesful job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always pass
+        run: exit 0
+
+   job-always-fail:
+    name: Failing job
+    runs-on: ubuntu-latest
+    steps:
+     - name: Always fail
+        run: exit 1
+    
+   job-to-be-skipped:
+     if: false
+     name: Skipped job
+     runs-on: ubuntu-latest
+     steps:
+       - name: Check out repository
+         run: echo "Hello world"
